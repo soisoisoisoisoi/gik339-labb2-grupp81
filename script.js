@@ -14,13 +14,36 @@ const outputDiv = document.getElementById("outputDiv");
 
 //funktionsdeklaration
 
+//logga e.target
 function handleInputEvent(e) {
   console.log("Event target:", e.target);
+  //hämta name från target
   const targetName = e.target.name;
-  console.log("Name attribute:", targetName);
-
+  console.log("Elementets namn:", targetName);
+  //om det är content, skriv värdet till diven
   if (targetName === "content") {
-    // skriv innehållet i diven
     outputDiv.innerHTML = e.target.value;
   }
 }
+
+//eventlyssnare
+
+//input och blur på textfälten
+Array.from(textFields).forEach((field) => {
+  field.addEventListener("input", handleInputEvent);
+  field.addEventListener("blur", handleInputEvent);
+});
+
+//checkbox
+//ändra bakgrundsfärg på diven
+checkbox.addEventListener("change", () => {
+  const colorValue = document.getElementById("color").value;
+  outputDiv.style.backgroundColor = colorValue;
+});
+
+//knapp
+//ta bort diven från DOM
+removeButton.addEventListener("click", () => {
+  outputDiv.remove();
+  console.log("Div togs bort från DOM.");
+});
