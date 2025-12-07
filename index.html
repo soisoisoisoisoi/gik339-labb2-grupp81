@@ -5,5 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>GIK339 - Labb 2</title>
   </head>
-  <body></body>
+  <body>
+    <h1>Labb 2 - Grupp 81</h1>
+
+    <form id="controls">
+      <!--Text 1-->
+      <label for="color">Färg</label>
+      <input type="text" id="color" name="color" class="textfield" />
+
+      <!--Text 2-->
+      <label for="content">Innehåll</label>
+      <input type="text" id="content" name="content" class="textfield" />
+
+      <!--Checkbox-->
+      <label for="divStyle">Stil på div</label>
+      <input type="checkbox" id="divStyle" name="divStyle" class="checkbox" />
+
+      <!--Knapp-->
+      <button id="removeBtn" type="button">Ta bort</button>
+    </form>
+
+    <!--Div som ska fyllas i eller tas bort-->
+    <div id="outputDiv">Div ska vara här</div>
+
+    <script src="script.js"></script>
+  </body>
 </html>
